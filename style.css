@@ -19,6 +19,7 @@ nav {
   background: purple;
   color: white;
   position: relative;
+  box-shadow: 0 0 4px #333;
 }
 .nav-links {
   display: flex;
@@ -34,6 +35,7 @@ nav {
 p {
   margin: 3rem 2rem;
 }
+
 .label {
   visibility: hidden;
   font-size: 1.5rem;
@@ -48,20 +50,6 @@ p {
   top: 50%;
   transform: translateY(-50%);
 }
-
-input[type=checkbox]{
-  display: none;
-}
-input[type=checkbox]:checked + label .fa-hamburger {
-  visibility: hidden;
-}
-input[type=checkbox]:checked + label .fa-times {
-  visibility: visible; 
-}
-input[type=checkbox]:checked ~ .nav-links {
-  display: block;
-}
-
 @media screen and (max-width: 600px){
   .nav-links {
     display: none;
@@ -70,8 +58,25 @@ input[type=checkbox]:checked ~ .nav-links {
     visibility: visible;
   }
 }
+
+#hamburger{
+  display: none;
+}
+#hamburger:checked + label .fa-hamburger {
+  visibility: hidden;
+}
+#hamburger:checked + label .fa-times {
+  visibility: visible; 
+}
+#hamburger:checked ~ .nav-links {
+  display: block;
+}
+
 @media screen and (min-width: 600px){
   .fa-times {
     visibility: hidden !important;
+  }
+  .nav-links {
+    display: flex !important;
   }
 }
